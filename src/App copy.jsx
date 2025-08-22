@@ -41,22 +41,42 @@ export default function App() {
 
   return (
 	  
-  <>
-	  	 
-    <html lang="en">
-	 
-    <head>
-        <title>Hello there</title>
-    </head>
-	  <script data-target-id="bp-e729cea0-2657-4ce3-8f68-ec2c8e97ea1c" async type="module" src="https://cdn.elements.amazon/elements/amazon-delivery-card/v1.0/web-component.js"/>
-    <body>
-	    
-    <button type="button">Click Me</button>
-		<amazon-delivery-card product-external-id="MM-0H7V-BMAC" show-explainer="true" color-mode="dark">
-		</amazon-delivery-card>
-    </body>
-    </html>
-  </>
-)
-  
+    <Flex
+      className="App"
+      justifyContent="center"
+      alignItems="center"
+      direction="column"
+      width="70%"
+      margin="0 auto"
+    >
+      <Heading level={1}>My Notes</Heading>
+      <Divider />
+      <Grid
+        margin="3rem 0"
+        autoFlow="column"
+        justifyContent="center"
+        gap="2rem"
+        alignContent="center"
+      >
+        {notes.map((note) => (
+          <Flex
+            key={note.id}
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            gap="2rem"
+            border="1px solid #ccc"
+            padding="2rem"
+            borderRadius="5%"
+            className="box"
+          >
+            <View>
+              <Heading level={3}>{note.name || note.description || "Untitled Note"}</Heading>
+            </View>
+          </Flex>
+        ))}
+      </Grid>
+      <Button onClick={signOut}>Sign Out</Button>
+    </Flex>
+  );
 }

@@ -40,6 +40,7 @@ export default function App() {
   }
 
   return (
+	  
     <Flex
       className="App"
       justifyContent="center"
@@ -50,6 +51,7 @@ export default function App() {
     >
       <Heading level={1}>My Notes</Heading>
       <Divider />
+	  	  <script data-target-id="bp-e729cea0-2657-4ce3-8f68-ec2c8e97ea1c" async type="module" src="https://cdn.elements.amazon/elements/amazon-delivery-card/v1.0/web-component.js">
       <Grid
         margin="3rem 0"
         autoFlow="column"
@@ -75,6 +77,8 @@ export default function App() {
           </Flex>
         ))}
       </Grid>
+		<amazon-delivery-card product-external-id="MM-0H7V-BMAC" show-explainer="true" color-mode="dark">
+		</amazon-delivery-card>
       <Button onClick={signOut}>Sign Out</Button>
     </Flex>
   );
